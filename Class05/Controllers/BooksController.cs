@@ -79,8 +79,8 @@ namespace Class05.Controllers
             {
                 var newBook=new Book(); //create a new Book and populate whit fields of the book parameter
                 newBook.Title= book.Title;
-                newBook.CoverPhoto = book.CoverPhoto.FileName;
-                newBook.Document = book.Document.FileName;
+                newBook.CoverPhoto = Path.GetFileName(book.CoverPhoto.FileName); // some old browsers send full path...
+                newBook.Document = Path.GetFileName(book.Document.FileName); 
 
                 //save the files in the corresponding folder
                 // Save the CoverPhoto file in the Cover folder
